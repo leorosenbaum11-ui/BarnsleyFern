@@ -4,6 +4,9 @@ let posY
 let nextX
 let nextY
 
+let fernX
+let fernY
+
 let chance
 
 function setup() {
@@ -34,24 +37,31 @@ function rlf() {
 }
 
 function draw() {
-    //chances
-    chance = random(100)
-    if (chance < 1) {
-        stem()
-    } else if (chance < 86) {
-        sml()
-    } else if (chance < 93) {
-        llf()
-    } else {
-        rlf()
+    for (let i = 0; i < 100; i++) {
+        //chances
+        chance = random(100)
+        if (chance < 1) {
+            stem()
+        } else if (chance < 86) {
+           sml()
+        } else if (chance < 93) {
+          llf()
+        } else {
+          rlf()
+        }
+    
+        print(nextX + ", " + nextY)
+
+        fernX = map(posX, -2.1820, 2.6558, 0, width)
+        fernY = map(posY, 0, 9.998, 0, height)
+
+        fill(34, 139, 34)
+        //plotting
+        point(fernX, fernY)
+
+        //calculating next point
+        posX = nextX
+        posY = nextY
     }
     
-    print(nextX + ", " + nextY)
-    
-    //plotting
-    point(posX, posY)
-
-    //calculating next point
-    posX = nextX
-    posY = nextY
 }
