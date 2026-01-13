@@ -50,10 +50,10 @@ function draw() {
           rlf()
         }
     
-        print(nextX + ", " + nextY)
+        //print(nextX + ", " + nextY)
 
         fernX = map(posX, -2.1820, 2.6558, 0, width)
-        fernY = map(posY, 0, 9.998, 0, height)
+        fernY = map(posY, 0, 9.998, height, 0)
 
         fill(34, 139, 34)
         //plotting
